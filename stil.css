@@ -40,8 +40,8 @@ section { margin-top: 44px; }
 .bilde > img.kart {
   display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 40%;
   filter: saturate(0.7) brightness(1.05); opacity: 0.8;
-  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 52%, transparent 100%);
-          mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 52%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side at 50% 48%, #000 62%, transparent 100%);
+          mask-image: radial-gradient(closest-side at 50% 48%, #000 62%, transparent 100%);
 }
 .bilde > img.pinnie {
   position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); z-index: 2;
