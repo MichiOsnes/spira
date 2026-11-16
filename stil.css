@@ -1,0 +1,127 @@
+:root {
+  color-scheme: light;
+  --ink: #1F1A26;
+  --ink-soft: #4D4656;
+  --muted: #6F6878;
+  --plum: #2E2440;
+  --purple: #5B45A0;
+  --card: #FFFFFF;
+  --line: #F0EAEE;
+  /* Spira-pastell: bakgrunn og strek for hver farge */
+  --fersken: #FFEDE2; --fersken-ink: #9A4A22;
+  --rosa: #FFE9F1;    --rosa-ink: #A3395F;
+  --lilla: #E9E0F6;   --lilla-ink: #5B45A0;
+  --salvie: #D9EFE2;  --salvie-ink: #24694A;
+  --smor: #FFF4DD;    --smor-ink: #84590A;
+  --bla: #E3EEFA;     --bla-ink: #2C5F8F;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: #FBF5F3;
+  background-image: linear-gradient(180deg, #FFF0E8 0%, #FBF5F3 40%, #F5F0FA 100%);
+  min-height: 100vh;
+}
+main { max-width: 600px; margin: 0 auto; padding: 24px 16px 40px; }
+h1, h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; color: var(--plum); line-height: 1.15; }
+h1 { font-size: 48px; margin: 0 0 8px; }
+h2 { font-size: 26px; margin: 0 0 14px; }
+p { margin: 0 0 12px; color: var(--ink-soft); }
+a { color: var(--purple); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+section { margin-top: 44px; }
+
+/* Toppen: kartet glir mykt over i bakgrunnen, med Pinnie foran */
+.bilde { position: relative; margin: -8px -16px 0; }
+.bilde > img.kart {
+  display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 40%;
+  filter: saturate(0.7) brightness(1.05); opacity: 0.8;
+  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 52%, transparent 100%);
+          mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 52%, transparent 100%);
+}
+.bilde > img.pinnie {
+  position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); z-index: 2;
+  width: 34%; max-width: 170px; height: auto; filter: drop-shadow(0 6px 10px rgba(46, 36, 64, 0.10));
+}
+.topp { text-align: center; }
+.setning { font-size: 19px; line-height: 1.5; max-width: 420px; margin: 0 auto 22px; }
+.pille {
+  display: inline-block; background: var(--plum); color: #fff; border-radius: 999px;
+  padding: 13px 24px; font-weight: 600; font-size: 16px; text-decoration: none;
+}
+
+/* Kort og lister */
+.kort {
+  background: var(--card); border-radius: 22px; padding: 6px 20px;
+  box-shadow: 0 4px 12px rgba(46, 36, 64, 0.05);
+}
+.rad { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.rad:last-child { border-bottom: 0; }
+.rad h3 { margin: 0 0 2px; font-size: 17px; color: var(--plum); }
+.rad p { margin: 0; font-size: 16px; line-height: 1.5; }
+.sirkel {
+  flex: none; width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.sirkel svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.fersken { background: var(--fersken); color: var(--fersken-ink); }
+.rosa { background: var(--rosa); color: var(--rosa-ink); }
+.lilla { background: var(--lilla); color: var(--lilla-ink); }
+.salvie { background: var(--salvie); color: var(--salvie-ink); }
+.smor { background: var(--smor); color: var(--smor-ink); }
+.bla { background: var(--bla); color: var(--bla-ink); }
+
+/* Bare ditt */
+.ditt { background: var(--salvie); border-radius: 22px; padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start; }
+.ditt .sirkel { background: #fff; color: var(--salvie-ink); }
+.ditt h2 { font-size: 22px; margin: 2px 0 6px; }
+.ditt p { margin: 0; color: #2F4A3C; }
+
+/* Hjelp */
+.hjelp { text-align: center; padding: 26px 20px 28px; }
+.hjelp p { margin-bottom: 18px; }
+.knapp {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--plum); color: #fff;
+  border-radius: 999px; padding: 13px 22px; font-weight: 600; text-decoration: none;
+}
+.knapp svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.adresse { display: block; margin-top: 10px; font-size: 15px; color: var(--muted); }
+
+/* Ofte spurt */
+details { border-bottom: 1px solid var(--line); }
+details:last-child { border-bottom: 0; }
+summary {
+  list-style: none; cursor: pointer; padding: 16px 28px 16px 0; position: relative;
+  font-weight: 600; color: var(--plum);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: ''; position: absolute; right: 4px; top: 50%; width: 9px; height: 9px; margin-top: -7px;
+  border-right: 2px solid var(--purple); border-bottom: 2px solid var(--purple); transform: rotate(45deg);
+  transition: transform .2s;
+}
+details[open] summary::after { transform: rotate(225deg); margin-top: -2px; }
+details p { padding-bottom: 14px; margin: 0; }
+
+/* Bunnen: Pinnie vinker */
+.vinker { text-align: center; margin-top: 48px; }
+.vinker img { height: 92px; width: auto; }
+.fot { text-align: center; font-size: 14px; color: var(--muted); margin-top: 10px; }
+.fot p { color: var(--muted); margin: 2px 0; }
+
+/* Personvernsiden */
+.tilbake { display: inline-block; margin-bottom: 12px; font-size: 15px; text-decoration: none; }
+.liten-topp { text-align: center; margin-bottom: 8px; }
+.liten-topp img { width: 84px; height: auto; }
+.liten-topp h1 { font-size: 40px; }
+.liten-topp p { color: var(--muted); font-size: 15px; }
+.tekst { padding: 8px 20px 12px; }
+.tekst h3 { font-size: 17px; margin: 18px 0 4px; color: var(--plum); }
+
+@media (max-width: 420px) {
+  h1 { font-size: 42px; }
+}
